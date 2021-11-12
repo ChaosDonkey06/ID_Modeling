@@ -47,8 +47,6 @@ scinot <- function (x, digits = 2, type = c("expression","latex")) {
 
 
 
-
-
 ## the following installs 'pomp' if it isn't already installed.
 if (!("pomp" %in% rownames(installed.packages()))) {
   install.packages("pomp")
@@ -152,7 +150,7 @@ th2.range <- c(0,10)
 tic <- Sys.time()
 mpar1 <- foreach(i=1:JOBS,
                  .packages='pomp',
-                 .inorder=FALSE) %dopar% 
+                 .inorder=FALSE) %dopar%
 {
   set.seed(123+i)
   th.draw <-c(th1=runif(1,min=th1.range[1],max=th1.range[2]),
